@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Add Author{% endblock %}
+
+
+{% block content %}
+    <h1 class="text-2xl">Add Author</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button class="py-3 px-6 bg-red-300 hover:bg-red-400 rounded-lg text-white">Submit</button>
+    </form>
+{% endblock %}
