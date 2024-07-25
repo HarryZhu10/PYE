@@ -10,6 +10,15 @@ def index(request):
         'books':books
     })
 
+def detail(request, pk):
+    book = Book.objects.get(pk=pk)
+
+    return render(request, 'book/detail.html', {
+        'book': book
+    })
+
+
+
 def add(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
