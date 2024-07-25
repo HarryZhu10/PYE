@@ -8,4 +8,7 @@
 
     <h3><strong>Status:</strong>{{ book.get_status_display }}</h3> 
     <h3><strong>Author:</strong><a href="{% url 'author:detail' book.author.id %}">{{ book.author.name }}</h3> 
-        {% endblock %}
+
+    <a href="{% url 'book:edit' book.id %}" class="mt-6 py-4 px-6 bg-red-300 inline-block hover:bg-red-400 rounded-lg text-white">Edit Book</a>
+    <a href="{% url 'book:delete' book.id %}" class="mt-6 py-4 px-6 bg-amber-300 inline-block hover:bg-amber-400 rounded-lg text-white">Delete Book</a>
+{% endblock %}
