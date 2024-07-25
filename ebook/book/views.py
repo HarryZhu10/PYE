@@ -1,7 +1,14 @@
 from django.shortcuts import render, redirect
 
 from .forms import BookForm
+from .models import Book
 
+def index(request):
+    books = Book.objects.all()
+
+    return render(request, 'book/index.html', {
+        'books':books
+    })
 
 def add(request):
     if request.method == 'POST':
