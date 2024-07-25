@@ -11,6 +11,14 @@ def index(request):
     })
 
 
+def detail(request, pk):
+    author = Author.objects.get(id=pk)
+
+    return render(request, 'author/detail.html', {
+        'author': author
+    }) 
+
+
 def add(request):
     if request.method == 'POST':
         form = AuthorForm(request.POST)
